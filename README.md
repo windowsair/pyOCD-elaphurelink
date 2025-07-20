@@ -2,7 +2,7 @@ pyOCD
 =====
 
 
-# elaphureLink for PyOCD: [docs](./docs/debug_probes.md)
+# elaphureLink for PyOCD: [docs](./docs/probe_elaphurelink.md)
 
 [\[pyocd.io\]](https://pyocd.io/) [\[Docs\]](https://pyocd.io/docs) [\[Slack\]](https://join.slack.com/t/pyocd/shared_invite/zt-wmy3zvg5-nRLj1GBWYh708TVfIx9Llg) [\[Mailing list\]](https://groups.google.com/g/pyocd) [\[CI results\]](https://dev.azure.com/pyocd/pyocd/_build?definitionId=1&_a=summary)
 
