@@ -81,6 +81,12 @@ jobs:
             dist/*.tar.gz
           retention-days: 7
 
+      - name: Delete unused file
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          rm -rf dist/pyocd/*
+          rm -rf dist/pyocd
+
       - name: Publish distribution 📦 to PyPI
         if: matrix.os == 'ubuntu-latest'
         uses: pypa/gh-action-pypi-publish@release/v1
