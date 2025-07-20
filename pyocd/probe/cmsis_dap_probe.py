@@ -751,4 +751,6 @@ class CMSISDAPProbePlugin(Plugin):
                 "Whether the CMSIS-DAP probe backend will use deferred transfers for improved performance."),
             OptionInfo('cmsis_dap.limit_packets', bool, False,
                 "Restrict CMSIS-DAP backend to using a single in-flight command at a time."),
+            OptionInfo('cmsis_dap.elaphurelink.addr', str, False,
+                "Device address of elaphureLink"),
             ]

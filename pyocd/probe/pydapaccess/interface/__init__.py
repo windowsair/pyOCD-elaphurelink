@@ -23,6 +23,7 @@ from .hidapi_backend import HidApiUSB
 from .pyusb_backend import PyUSB
 from .pyusb_v2_backend import PyUSBv2
 from .pywinusb_backend import PyWinUSB
+from .pyelaphurelink_backend import PyElaphureLink
 
 LOG = logging.getLogger(__name__)
 
@@ -31,6 +32,7 @@ INTERFACE = {
              'pyusb': PyUSB,
              'pyusb_v2': PyUSBv2,
              'pywinusb': PyWinUSB,
+             'elaphureLink': PyElaphureLink,
             }
 
 # Allow user to override backend with an environment variable.
@@ -64,3 +66,4 @@ if not USB_BACKEND:
         raise DAPAccessIntf.DeviceError("No USB backend found")
 
 USB_BACKEND_V2 = "pyusb_v2"
+ELAPHURELINK_BACKEND = "elaphureLink"

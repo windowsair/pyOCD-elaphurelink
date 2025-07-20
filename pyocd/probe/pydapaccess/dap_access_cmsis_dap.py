@@ -25,7 +25,7 @@ from typing import (Any, Dict, Optional, Tuple, Union)
 from .dap_settings import DAPSettings
 from .dap_access_api import DAPAccessIntf
 from .cmsis_dap_core import CMSISDAPProtocol
-from .interface import (INTERFACE, USB_BACKEND, USB_BACKEND_V2)
+from .interface import (INTERFACE, USB_BACKEND, USB_BACKEND_V2, ELAPHURELINK_BACKEND)
 from .interface.common import ARM_DAPLINK_ID
 from .cmsis_dap_core import (
     Command,
@@ -71,6 +71,10 @@ TRACE.setLevel(logging.CRITICAL)
 
 def _get_interfaces():
     """@brief Get the connected USB devices"""
+
+    # Get elaphureLink interface.
+    elaphurelink_interface = INTERFACE[ELAPHURELINK_BACKEND].get_all_connected_interfaces()
+
     # Get CMSIS-DAPv1 interfaces.
     v1_interfaces = INTERFACE[USB_BACKEND].get_all_connected_interfaces()
 
@@ -91,7 +95,7 @@ def _get_interfaces():
             v1_interfaces.remove(dev)
 
     # Return the combined list.
-    return v1_interfaces + v2_interfaces
+    return v1_interfaces + v2_interfaces + elaphurelink_interface
 
 
 def _get_unique_id(interface):
